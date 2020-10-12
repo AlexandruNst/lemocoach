@@ -1,0 +1,188 @@
+@use 'base';
+
+.-accent {
+  font-weight: 700;
+  color: $yellow;
+}
+.-yellow {
+  color: $yellow;
+}
+.-crumb {
+  margin-left: $text-margin-left;
+  @media (max-width: 992px) {
+    font-size: 0.8rem;
+  }
+  img {
+    height: 0.9rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.-title {
+  margin-left: $text-margin-left;
+  font-size: 5vw;
+  @media (max-width: 992px) {
+    font-size: 8vw;
+    margin-right: $text-margin-left;
+  }
+}
+
+.tk-blob {
+  position: relative;
+  width: 4rem;
+  @media (max-width: 992px) {
+    display: none;
+  }
+
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   background-color: red;
+  //   height: 0;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  user-select: none;
+  //   overflow: auto;
+  pointer-events: none;
+  overflow: visible;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.04, 0.39, 0.31, 0.99);
+  p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-weight: 700;
+    opacity: 0;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.04, 0.39, 0.31, 0.99);
+  }
+}
+
+.-yellow-blob-link {
+  overflow: hidden;
+  border-radius: 50px;
+  border: 1px solid $yellow;
+  width: fit-content;
+  transition: all 0.3s cubic-bezier(0.04, 0.39, 0.31, 0.99);
+  text-shadow: none;
+  &:hover {
+    color: $black !important;
+  }
+}
+.-blob-link {
+  position: relative;
+  //   background-color: green;
+  padding: 1rem 2rem;
+  @media (max-width: 992px) {
+    padding: 1rem 1rem;
+  }
+  &:hover {
+    span {
+      height: 250%;
+    }
+  }
+  span {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    bottom: -100%;
+    background-color: $yellow;
+    z-index: -1;
+    border-top-left-radius: 500px;
+    border-top-right-radius: 500px;
+  }
+  span:nth-child(1) {
+    left: 0;
+    transition: all 0.6s cubic-bezier(0.04, 0.39, 0.31, 0.99);
+    transition-delay: 0.08s;
+  }
+  span:nth-child(2) {
+    left: 25%;
+    transition: all 0.7s cubic-bezier(0.04, 0.39, 0.31, 0.99);
+  }
+  span:nth-child(3) {
+    left: 50%;
+    transition: all 0.4s cubic-bezier(0.04, 0.39, 0.31, 0.99);
+    transition-delay: 0.15s;
+  }
+  span:nth-child(4) {
+    left: 75%;
+    transition: all 0.5s cubic-bezier(0.04, 0.39, 0.31, 0.99);
+    transition-delay: 0.05s;
+  }
+}
+
+.-animation-link {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0%;
+    bottom: -5%;
+    width: 3rem;
+    height: 0;
+    background-color: $off-black;
+    // border-radius: 100px;
+    border: 2px solid $yellow;
+    @media (max-width: 992px) {
+      border: 1px solid $yellow;
+    }
+    z-index: -1;
+  }
+  &:hover {
+    animation: animation-link-text 0.5s cubic-bezier(0.04, 0.39, 0.31, 0.99)
+      forwards;
+    &::before {
+      animation: animation-link 0.5s cubic-bezier(0.04, 0.39, 0.31, 0.99)
+        forwards;
+    }
+  }
+}
+
+.-yellow-link {
+  transition: all 0.5s cubic-bezier(0.04, 0.39, 0.31, 0.99);
+  color: $yellow;
+  &:hover {
+    color: $white;
+  }
+}
+
+@keyframes animation-link {
+  0% {
+    width: 3rem;
+    height: 0;
+    left: 0%;
+    background-color: none;
+  }
+
+  50% {
+    width: 110%;
+    height: 0;
+    left: -5%;
+    background-color: $yellow;
+  }
+
+  100% {
+    width: 110%;
+    height: 110%;
+    left: -5%;
+    background-color: $yellow;
+  }
+}
+
+@keyframes animation-link-text {
+  0% {
+    color: $white;
+  }
+
+  50% {
+    color: $white;
+  }
+
+  100% {
+    color: $black;
+  }
+}
