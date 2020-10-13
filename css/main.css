@@ -182,7 +182,7 @@ body {
 
 @media (max-width: 992px) {
   #landing .-base {
-    margin-top: 12rem;
+    margin-top: 6rem;
     margin-bottom: 0;
   }
 }
@@ -318,7 +318,7 @@ span.-right {
 
 @media (max-width: 992px) {
   #background .-text-div {
-    font-size: 0.7rem;
+    font-size: 1rem;
     font-weight: 300;
     margin-top: 3rem;
     margin-left: 0;
@@ -406,7 +406,7 @@ span.-right {
 
 @media (max-width: 992px) {
   #whyus .-img-text-div .-text-div {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 300;
     width: 90%;
     margin-top: 3rem;
@@ -700,7 +700,7 @@ span.-right {
 @media (max-width: 992px) {
   #quote .-text-div {
     margin-right: 10vw;
-    font-size: 3.5vw;
+    font-size: 1.2rem;
   }
 }
 
